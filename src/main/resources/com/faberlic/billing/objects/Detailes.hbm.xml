@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15.04.2017 16:33:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.faberlic.billing.objects.Detailes" table="detailes" catalog="billing" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="operators" class="com.faberlic.billing.objects.Operators" fetch="select">
+            <column name="operator_id" />
+        </many-to-one>
+        <many-to-one name="phones" class="com.faberlic.billing.objects.Phones" fetch="select">
+            <column name="phone_id" />
+        </many-to-one>
+        <property name="calledAt" type="timestamp">
+            <column name="called_at" length="19" />
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="11" />
+        </property>
+        <property name="recipient" type="string">
+            <column name="recipient" />
+        </property>
+        <property name="zoneVtk" type="string">
+            <column name="zone_vtk" />
+        </property>
+        <property name="zonePs" type="string">
+            <column name="zone_ps" />
+        </property>
+        <property name="service" type="string">
+            <column name="service" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price" precision="12" scale="0" />
+        </property>
+        <property name="period" type="date">
+            <column name="period" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

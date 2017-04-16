@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="billing"/>
+  <table-filter match-name="accesses"/>
+  <table-filter match-name="roles"/>
+  <table-filter match-name="departments"/>
+  <table-filter match-name="phones"/>
+  <table-filter match-name="billing_type"/>
+  <table-filter match-name="trips"/>
+  <table-filter match-name="detailes"/>
+  <table-filter match-name="users"/>
+  <table-filter match-name="operators"/>
+  <table-filter match-name="employees"/>
+</hibernate-reverse-engineering>

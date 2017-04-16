@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15.04.2017 16:33:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.faberlic.billing.objects.Users" table="users" catalog="billing" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ldapSid" type="string">
+            <column name="ldap_sid" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="isAdmin" type="byte">
+            <column name="is_admin" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

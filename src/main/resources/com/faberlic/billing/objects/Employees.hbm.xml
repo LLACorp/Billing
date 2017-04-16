@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15.04.2017 16:33:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.faberlic.billing.objects.Employees" table="employees" catalog="billing" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="foreign">
+                <param name="property">trips</param>
+            </generator>
+        </id>
+        <many-to-one name="accesses" class="com.faberlic.billing.objects.Accesses" fetch="select">
+            <column name="access_id" />
+        </many-to-one>
+        <many-to-one name="departments" class="com.faberlic.billing.objects.Departments" fetch="select">
+            <column name="deparment_id" />
+        </many-to-one>
+        <many-to-one name="employees" class="com.faberlic.billing.objects.Employees" fetch="select">
+            <column name="manager_id" />
+        </many-to-one>
+        <many-to-one name="roles" class="com.faberlic.billing.objects.Roles" fetch="select">
+            <column name="role_id" />
+        </many-to-one>
+        <one-to-one name="trips" class="com.faberlic.billing.objects.Trips" constrained="true"></one-to-one>
+        <property name="ldapGuid" type="string">
+            <column name="ldap_guid" />
+        </property>
+        <property name="fio" type="string">
+            <column name="fio" />
+        </property>
+        <property name="email" type="java.lang.Integer">
+            <column name="email" />
+        </property>
+        <property name="ldapSync" type="java.lang.Boolean">
+            <column name="ldap_sync" />
+        </property>
+        <set name="employeeses" table="employees" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="manager_id" />
+            </key>
+            <one-to-many class="com.faberlic.billing.objects.Employees" />
+        </set>
+        <set name="phoneses" table="phones" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="employee_id" />
+            </key>
+            <one-to-many class="com.faberlic.billing.objects.Phones" />
+        </set>
+    </class>
+</hibernate-mapping>

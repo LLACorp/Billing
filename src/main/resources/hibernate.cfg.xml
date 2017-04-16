@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/billing</property>
+    <property name="hibernate.connection.username">admin</property>
+    <property name="hibernate.connection.password">admin123</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.hbm2ddl.auto">validate</property>
+    <mapping resource="com/faberlic/billing/objects/Operators.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Employees.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Users.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/BillingType.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Departments.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Detailes.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Trips.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Accesses.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Phones.hbm.xml"/>
+    <mapping resource="com/faberlic/billing/objects/Roles.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

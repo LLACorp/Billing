@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15.04.2017 16:33:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.faberlic.billing.objects.Trips" table="trips" catalog="billing" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeId" type="java.lang.Integer">
+            <column name="employee_id" />
+        </property>
+        <property name="dateStart" type="date">
+            <column name="date_start" length="10" />
+        </property>
+        <property name="dateEnd" type="date">
+            <column name="date_end" length="10" />
+        </property>
+        <property name="destinationPlace" type="string">
+            <column name="destination_place" />
+        </property>
+        <property name="document" type="string">
+            <column name="document" />
+        </property>
+        <property name="target" type="string">
+            <column name="target" />
+        </property>
+        <one-to-one name="employees" class="com.faberlic.billing.objects.Employees"></one-to-one>
+    </class>
+</hibernate-mapping>
